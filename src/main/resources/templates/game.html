@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gra Słowna</title>
+</head>
+<body>
+<h2>Podaj tłumaczenie słowa: </h2>
+<form action="/game">  <!-- po wykonaniu akcji, wraca do result-->
+    <p th:text="${englishW}"></p>
+
+    <label>Przetłumacz</label>
+    <!--<form action="/result">   -->
+    <input type="text" name="name">
+
+
+
+    <!--<form th:if =polishWord==${polishW}-->
+          <!--th:action="@{|/game|}"method="get">-->
+        <!--<select name="correct">-->
+        <!--</select>-->
+    <!--</form>-->
+
+    <input type="submit" value="Sprawdz">
+
+
+
+</form>
+</form>
+</body>
+</html>

@@ -19,7 +19,7 @@ public class WordList {
         dictionary.put("spawacz", "welder");
         dictionary.put("operator spawania", "welding operator");
         dictionary.put("spawarka", "welding machine");
-        dictionary.put("spawanie ręczne", "weldig process");
+        dictionary.put("spawanie ręczne", "welding process");
         dictionary.put("spawanie częściowo zmechanizowane", "part mechanized welding");
         dictionary.put("spawanie zmechanizowane", "mechanized welding");
         dictionary.put("spawanie automatyczne", "automatic welding");

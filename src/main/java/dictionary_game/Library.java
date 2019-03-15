@@ -1,5 +1,7 @@
 package dictionary_game;
 
+import dictionary_game.controller.DictionaryController;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +28,7 @@ public class Library {
 
     Random random = new Random();
 
+//    DictionaryController dictionaryController = new DictionaryController();
 
     public Library() {
     }  //zeby dzialal hibernate, pusta klasa
@@ -34,8 +37,6 @@ public class Library {
         this.englishWord = englishWord;
         this.polishWord = polishWord;
     }
-
-
 
     public Integer getId() {
         return id;
@@ -64,8 +65,14 @@ public class Library {
 
     @Override
     public String toString() {
-        return  englishWord;
+        return  englishWord + polishWord;
         // to co nam zwraca z library w wywolaniu
     }// lepiej wrzucic kolejnego to stringa do innej klasy zeby byla czystosc, klodu ( w momencie gdy robimy polishword
+
+//    public String getMessage() {
+//
+//        if (polishWord.equalsIgnoreCase(dictionaryController.getPWord()));
+//        return "ass";
+//}
 
 }
