@@ -62,7 +62,7 @@ public class WordList {
         dictionary.put("nawis", "overlap");
         dictionary.put("poziom oceny", "evaluation level");
         dictionary.put("pęknięcie", "crack");
-        dictionary.put("noozle", "dysza wewnętrzna(sitko)");
+        dictionary.put("dysza wewnętrzna(sitko)", "noozle");
         dictionary.put("uchwyt spawalniczy", "welding torch");
         dictionary.put("cup", "dysza zewnętrzna(tzw.porcelanka)");
         dictionary.put("argon", "argon");
@@ -160,7 +160,7 @@ public class WordList {
         dictionary.put("klucz imbusowy", "hex key");
         dictionary.put("śruba", "bolt");
         dictionary.put("klucz nasadowy", "socket wrench");
-        dictionary.put("klucznastawny", "adjustable spanner");
+        dictionary.put("klucz nastawny", "adjustable spanner");
         dictionary.put("klucz płaski", "wrench");
         dictionary.put("kątownik", "angle");
         dictionary.put("kowadło", "anvil");

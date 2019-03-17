@@ -8,24 +8,25 @@
 <h2>Podaj tłumaczenie słowa: </h2>
 <form action="/game">  <!-- po wykonaniu akcji, wraca do result-->
     <p th:text="${englishW}"></p>
-
+    <p th:text="${polishW}"></p>
     <label>Przetłumacz</label>
     <!--<form action="/result">   -->
     <input type="text" name="name">
-
-
-
-    <!--<form th:if =polishWord==${polishW}-->
-          <!--th:action="@{|/game|}"method="get">-->
-        <!--<select name="correct">-->
-        <!--</select>-->
-    <!--</form>-->
-
-    <input type="submit" value="Sprawdz">
-
-
-
 </form>
+
+<form action="/help">
+    <h3 th:if="${polishW}">
+        <input type="submit" value="Sprawdz">
+
+
+        <p action="/help"></p>
+        Podpowiedź
+        <input type="submit" value="Tak">
+
+
+    </h3>
+
+
 </form>
 </body>
 </html>

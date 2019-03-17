@@ -28,10 +28,8 @@ public class Library {
 
     Random random = new Random();
 
-//    DictionaryController dictionaryController = new DictionaryController();
-
     public Library() {
-    }  //zeby dzialal hibernate, pusta klasa
+    }
 
     public Library(@NotNull String englishWord, @NotNull String polishWord) {
         this.englishWord = englishWord;
@@ -65,7 +63,7 @@ public class Library {
 
     @Override
     public String toString() {
-        return  englishWord + polishWord;
+        return englishWord + polishWord;
         // to co nam zwraca z library w wywolaniu
     }// lepiej wrzucic kolejnego to stringa do innej klasy zeby byla czystosc, klodu ( w momencie gdy robimy polishword
 
