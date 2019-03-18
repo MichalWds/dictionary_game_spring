@@ -21,6 +21,7 @@ public class DictionaryService {
     private LibraryRepository libraryRepository;
 
 
+
     public void work() {
 
         count = (int) libraryRepository.count();
@@ -45,20 +46,21 @@ public class DictionaryService {
 
     }
 
-    public String getMessage() {
 
-        if (name != null) {
 
-            if (PWord.equals(name)) {
-                return "dobrze";
+    public String getMessage(String name) {
+
+        while (name!=null)
+        {
+            if (!name.equals(PWord) || name==""){
+                return "zle -1pkt";
             } else {
-                return "zle";
+            return "dobrze! +1pkt";
             }
-        }
-        return previousWord = PWord;
 
+    }return "";
 
-    }
-}
+}}
+
 
 

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,20 +41,25 @@ public class DictionaryController {
     private Integer id;
 
 
+    @GetMapping("/")
+    public String homePage(@RequestParam(required = false) String name,ModelMap modelMap) {
+
+
+        modelMap.put("answer",dictionaryService.getMessage(name));
+        modelMap.put("englishW", dictionaryService.getEnglishW());
+        modelMap.put("polishW", dictionaryService.getPolishW());
+
+        return "game";
+    }
+
     @GetMapping("/game")
     public String showEnglish(@RequestParam(required = false) String name, ModelMap modelMap) {
 
-    name= previousWord;
 
+        modelMap.put("answer", dictionaryService.getMessage(name)); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryService.getEnglishW());
-
-//        name = dictionaryService.getPolishW();
-
         modelMap.put("polishW", dictionaryService.getPolishW());
-        modelMap.put("answer", dictionaryService.getMessage());
-
-
-        return "game";
+        return "redirect:/game";
     }
 
     @GetMapping("/help")
@@ -63,9 +69,10 @@ public class DictionaryController {
         return "help";
     }
 
-
-
-
+//@RequestMapping("/game")
+//    public String hint(RedirectAttributes redirectAttributes){
+//
+//}
 
 
 
