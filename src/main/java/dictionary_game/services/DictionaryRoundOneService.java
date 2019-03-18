@@ -9,12 +9,9 @@ import sun.plugin.liveconnect.ReplaceMethod;
 import java.util.Random;
 
 @Service
-public class DictionaryService {
+public class DictionaryRoundOneService {
 
-    private String name;
-    private String name2;
     private Random random = new Random();
-    private static String previousWord;
     int count;
     private int index;
     private String EWord;
@@ -36,24 +33,20 @@ public class DictionaryService {
     public String getFirstEnglishW() {
         count = (int) libraryRepository.count();
         index = random.nextInt((int) count);
-        return EWord = libraryRepository.findById(index+1).get().getEnglishWord();
+        return EWord = libraryRepository.findById(index + 1).get().getEnglishWord();
 
     }
 
-    public String getPolishW(){
+    public String getPolishW() {
 
-        return  PWord = libraryRepository.findById(index+1).get().getPolishWord();
+        return PWord = libraryRepository.findById(index + 1).get().getPolishWord();
     }
 
-    public String getName() {
-        return this.name;
-
-    }
 
 
     public String getMessage(String name) {
 
-        while (name!=null) {
+        while (name != null) {
 
             if (!name.equals(PWord) || name == "") {
                 user.substractPoints();
@@ -63,8 +56,9 @@ public class DictionaryService {
                 return "Dobrze! +1pkt! " + " Liczba Twoich punktów to : " + user.getNumberOfPoints();
             }
         }
-            return "";
-        }
+        return "";
+    }
+}
 //        } if (user.getNumberOfPoints()==10){
 //                return "Brawo! Czas przejść do drugiej rundy!";
 //            }
@@ -72,22 +66,6 @@ public class DictionaryService {
 
 
 
-
-    public String getMessage2(String name2) {
-        while (name2!=null){
-
-            if(!name2.equals(EWord) || name2==""){
-                user.substractPoints();
-                return "Błąd! -1pkt! " + " Twoja liczba punktów to: " + user.getNumberOfPoints();
-            }else {
-                user.addPoint();
-                return "Świetnie! +1pkt! " + "Liczba Twoich punktów to : " + user.getNumberOfPoints();
-            }
-
-        }return "";
-    }
-
-}
 
 
 

@@ -6,25 +6,25 @@
 </head>
 <body>
 <h2>Podaj tłumaczenie słowa: </h2>
-<form accept="/game">  <!-- po wykonaniu akcji, wraca do result-->
-    <p th:text="${englishW}"></p>
+<form accept="/roundtwo">  <!-- po wykonaniu akcji, wraca do result-->
+    <p th:text="${polishW}"></p>
     <label>Przetłumacz</label>
 
     <input type="text" name="name">
     <input type="submit" value="Następne">
 
 
-    <div th:text="${answer}"></div>
+    <div th:text="${answer2}"></div>
     <input type="button" value="Sprawdz">
 </form>
 
 </form>
 
-<form  action="/help">
-    <h3 th align="center" th:accept="${polishW}">
+<form  action="/help2">
+    <h3 th align="center" th:accept="${englishW}">
 
 
-        <input type="hidden" th:value="${polishW}" name="Podpowiedz"/>
+        <input type="hidden" th:value="${englishW}" name="Podpowiedz"/>
         Podpowiedź
         <input value="tak" type="submit">
     </h3>
@@ -32,7 +32,7 @@
 <form>
     <select name="submit">
         <option value=1>Podpowiedź</option>
-        <option value="0"><p th:text="${polishW}"</p></option>
+        <option value="0"><p th:text="${englishW}"</p></option>
     </select>
 
     </h3>

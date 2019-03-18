@@ -64,7 +64,7 @@ public class WordList {
         dictionary.put("pęknięcie", "crack");
         dictionary.put("dysza wewnętrzna(sitko)", "noozle");
         dictionary.put("uchwyt spawalniczy", "welding torch");
-        dictionary.put("cup", "dysza zewnętrzna(tzw.porcelanka)");
+        dictionary.put("dysza zewnętrzna(porcelanka)", "cup");
         dictionary.put("argon", "argon");
         dictionary.put("hel", "helium");
         dictionary.put("butla z gazem", "gas bottle");
@@ -153,7 +153,7 @@ public class WordList {
         dictionary.put("papier ścierny", "sandpaper");
         dictionary.put("piła", "saw");
         dictionary.put("piłała ńcuchowa", "chainsaw");
-        dictionary.put("szlifierkakątowa", "angle grinder");
+        dictionary.put("szlifierka kątowa", "angle grinder");
         dictionary.put("frezarka", "milling machine");
         dictionary.put("tokarka", "lathe machine");
         dictionary.put("wkrętak", "screw driver");
