@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gra Słowna</title>
+</head>
+<body>
+<h2>Podaj tłumaczenie słowa: </h2>
+<form accept="/game">  <!-- po wykonaniu akcji, wraca do result-->
+    <p th:text="${englishW}"></p>
+    <label>Przetłumacz</label>
+
+    <input type="text" name="name">
+    <input type="submit" value="Następne">
+
+
+    <div th:text="${answer}"></div>
+    <input type="button" value="Sprawdz">
+</form>
+
+</form>
+
+<form  action="/help">
+    <h3 th align="center" th:accept="${polishW}">
+
+
+        <input type="hidden" th:value="${polishW}" name="Podpowiedz"/>
+        Podpowiedź
+        <input value="tak" type="submit">
+    </h3>
+</form>
+<form>
+    <select name="submit">
+        <option value=1>Podpowiedź</option>
+        <option value="0"><p th:text="${polishW}"</p></option>
+    </select>
+
+    </h3>
+</form>
+
+</form>
+</body>
+</html>
