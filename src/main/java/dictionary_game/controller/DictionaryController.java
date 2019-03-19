@@ -4,6 +4,7 @@ import dictionary_game.LibraryRepository;
 
 import dictionary_game.model.User;
 import dictionary_game.services.DictionaryRoundOneService;
+import dictionary_game.services.DictionaryRoundThreeService;
 import dictionary_game.services.DictionaryRoundTwoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -26,13 +27,16 @@ public class DictionaryController {
     @Autowired
     private User user = new User();
 
- private String  communicat = "Twoja liczba punktów to : ";
+    private String communicat = "Twoja liczba punktów to : ";
 
     @Autowired
     DictionaryRoundOneService dictionaryRoundOneService;
 
     @Autowired
     DictionaryRoundTwoService dictionaryRoundTwoService;
+
+    @Autowired
+    DictionaryRoundThreeService dictionaryRoundThreeService;
 
     @Autowired
     private LibraryRepository libraryRepository;
@@ -45,13 +49,11 @@ public class DictionaryController {
     @GetMapping("/")
     public String homePage(@RequestParam(required = false) String name, ModelMap modelMap) {
 
-//        if (user.getNumberOfPoints()==2)
-//            return "redirect:/r";
 
-            modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat +  user.getNumberOfPoints());
-            modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
-            modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
-            modelMap.put("points", user.getNumberOfPoints());
+        modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
+        modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
+        modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
+        modelMap.put("points", user.getNumberOfPoints());
 
         return "roundone";
     }
@@ -62,7 +64,6 @@ public class DictionaryController {
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name)); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
-      //  modelMap.put("points", user.getNumberOfPoints());
         return "redirect:/roundone";
     }
 
@@ -76,9 +77,10 @@ public class DictionaryController {
     @GetMapping("/r")
     public String homePage2(@RequestParam(required = false) String name2, ModelMap modelMap) {
 
-        modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2)+ communicat+ user.getNumberOfPoints());
+        modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2) + communicat + user.getNumberOfPoints());
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
         modelMap.put("englishW", dictionaryRoundTwoService.getEnglishW());
+        modelMap.put("point2", user.getNumberOfPoints());
         return "roundtwo";
 
     }
@@ -99,12 +101,29 @@ public class DictionaryController {
         modelMap.put("help2", dictionaryRoundTwoService.getEnglishW());
         return "help2";
     }
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//@RequestMapping("/game")
-//    public String hint(RedirectAttributes redirectAttributes){
-//
-//}
+    @GetMapping("/r3")
+    public String homePage3(@RequestParam(required = false) String name3, ModelMap modelMap) {
 
+
+        modelMap.put("answer3", dictionaryRoundThreeService.getMessage(name3) + communicat + user.getNumberOfPoints());
+        modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
+        modelMap.put("hashWord",dictionaryRoundThreeService.getHashEnglish());
+        modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
+        modelMap.put("point3", user.getNumberOfPoints());
+
+        return "roundthree";
+    }
+
+    @GetMapping("/roundthree")
+    public String showHash(@RequestParam(required = false) String name3, ModelMap modelMap) {
+
+        modelMap.put("answer", dictionaryRoundThreeService.getMessage(name3)); //kolejnosc istotna!
+        modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
+        modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
+        return "redirect:/roundthree";
+    }
 
 }

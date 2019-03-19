@@ -25,7 +25,7 @@ public class WordList {
         dictionary.put("spawanie automatyczne", "automatic welding");
         dictionary.put("spoina nośna", "strenght weld");
         dictionary.put("metal rodzimy", "parent metal");
-        dictionary.put("spoiwo/ materiał dodatkowy", "filler material");
+        dictionary.put("spoiwo", "filler material");
         dictionary.put("drut spawalniczy", "wire");
         dictionary.put("pręt spawalniczy", "filler rod");
         dictionary.put("topnik", "flux");
@@ -152,7 +152,7 @@ public class WordList {
         dictionary.put("pilnik", "file");
         dictionary.put("papier ścierny", "sandpaper");
         dictionary.put("piła", "saw");
-        dictionary.put("piłała ńcuchowa", "chainsaw");
+        dictionary.put("piła łańcuchowa", "chainsaw");
         dictionary.put("szlifierka kątowa", "angle grinder");
         dictionary.put("frezarka", "milling machine");
         dictionary.put("tokarka", "lathe machine");
@@ -167,7 +167,7 @@ public class WordList {
         dictionary.put("rozwiertak", "reamer");
         dictionary.put("gilotyna", "guillotine");
         dictionary.put("spawarka światłowodowa", "fusion splicing");
-        dictionary.put("spawarka intertorowa", "inverter welder");
+        dictionary.put("spawarka inwentorowa", "inverter welder");
         dictionary.put("imadło", "iron");
         dictionary.put("rysik", "scriber");
         dictionary.put("poziomica", "level");

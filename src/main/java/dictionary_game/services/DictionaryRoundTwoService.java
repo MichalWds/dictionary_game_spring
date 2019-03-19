@@ -11,10 +11,8 @@ import java.util.Random;
 @Service
 public class DictionaryRoundTwoService {
 
-    private String name2;
     private Random random = new Random();
-    private static String previousWord;
-    int count;
+    private int count;
     private int index;
     private String EWord;
     private String PWord;
@@ -25,39 +23,39 @@ public class DictionaryRoundTwoService {
     @Autowired
     private User user;
 
-    public void work() {
+
+    public int work() {
 
         count = (int) libraryRepository.count();
         index = random.nextInt((int) count);
-
+        return index;
     }
+
 
     public String getEnglishW() {
 
-        return EWord = libraryRepository.findById(index+1).get().getEnglishWord();
-
+        return EWord = libraryRepository.findById(index + 1).get().getEnglishWord();
     }
 
-    public String getFirstPolishW(){
-        count = (int) libraryRepository.count();
-        index = random.nextInt((int) count);
-        return  PWord = libraryRepository.findById(index+1).get().getPolishWord();
-    }
+    public String getFirstPolishW() {
 
+        return PWord = libraryRepository.findById(work() + 1).get().getPolishWord();
+    }
 
 
     public String getMessage2(String name2) {
-        while (name2!=null){
+        while (name2 != null) {
 
-            if(!name2.equals(EWord) || name2 == ""){
+            if (!name2.equals(EWord) || name2 == "") {
                 user.substractPoints();
-                return "Błąd! -1pkt! " ;
-            }else {
+                return "Błąd! -1pkt! ";
+            } else {
                 user.addPoint();
-                return "Świetnie! +1pkt! " ;
+                return "Świetnie! +1pkt! ";
             }
 
-        }return "";
+        }
+        return "";
     }
 
 }

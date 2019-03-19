@@ -12,7 +12,7 @@ public class DictionaryRoundOneService {
 
     private Random random = new Random();
 
-    int count;
+    private int count;
     private int index;
     private String EWord;
     private String PWord;
@@ -23,28 +23,27 @@ public class DictionaryRoundOneService {
     @Autowired
     private User user;
 
-    public void work() {
+    public int work() {
 
         count = (int) libraryRepository.count();
         index = random.nextInt((int) count);
-
+        return index;
     }
 
     public String getFirstEnglishW() {
-        count = (int) libraryRepository.count();
-        index = random.nextInt((int) count);
-        return EWord = libraryRepository.findById(index+1).get().getEnglishWord();
+
+        return EWord = libraryRepository.findById(work() + 1).get().getEnglishWord();
 
     }
 
-    public String getPolishW(){
+    public String getPolishW() {
 
-        return  PWord = libraryRepository.findById(index+1).get().getPolishWord();
+        return PWord = libraryRepository.findById(index + 1).get().getPolishWord();
     }
 
     public String getMessage(String name) {
 
-        while (name!=null) {
+        while (name != null) {
 
             if (!name.equals(PWord) || name == "") {
                 user.substractPoints();
@@ -54,13 +53,10 @@ public class DictionaryRoundOneService {
                 return "Dobrze! +1pkt! ";
             }
         }
-            return "";
-        }
+        return "";
+    }
 }
-//        } if (user.getNumberOfPoints()==10){
-//                return "Brawo! Czas przejść do drugiej rundy!";
-//            }
-//            return getMessage2(name2);
+
 
 
 

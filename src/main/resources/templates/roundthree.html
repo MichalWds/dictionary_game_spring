@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Gra Słowna</title>
 </head>
 <body>
-$END$
+<h2>Uzupełnij brakujące znaki i wpisz poprawnie całe słowo </h2>
+<form accept="/roundthree">  <!-- po wykonaniu akcji, wraca do result-->
+    <p th:text="${hashWord}"></p>
+    <label>Przetłumacz</label>
+
+    <input type="text" name="name3">
+    <input type="submit" value="Następne">
+    <form>
+        <div th:if="${point3 > 3 }">
+            <a th:href="@{/r}">
+                <button type="button">Wróć do rundy 2</button>
+            </a></div>
+    </form>
+
+    <form>
+        <div th:if="${point3 > 3 }">
+            <a th:href="@{/}">
+                <button type="button">Wróć do rundy 1</button>
+            </a></div>
+    </form>
+
+    <div th:text="${answer3}"></div>
+    <input type="button" value="Sprawdz">
+    <!--</form>-->
+    <!--<a th:href="@{/r}"><button>Idź dalej</button></a>    &lt;!&ndash;@ mowi nam o linku do getmappinga np  &ndash;&gt;-->
+    <!--</form>-->
+
+
+    <form>
+        <select name="submit">
+        <option value=1>Podpowiedź PL</option>
+        <option value="0"><p th:text="${polishW}"</p></option>
+    </select>
+        <select name="submit">
+            <option value=1>Podpowiedź ANG</option>
+            <option value="0"><p th:text="${englishW}"</p></option>
+        </select>
+
+
+        </h3>
+    </form>
+
+</form>
 </body>
 </html>

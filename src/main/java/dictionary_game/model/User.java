@@ -7,7 +7,7 @@ public class User {
 
     private Integer numberOfPoints;
 
-    public User() {   //nowy user
+    public User() {
         numberOfPoints = 0;
     }
 
@@ -20,10 +20,11 @@ public class User {
 
     }
 
-        public void substractPoints(){
+    public void substractPoints() {
         numberOfPoints--;
 
-}
+    }
+
     public Integer getNumberOfPoints() {
         return numberOfPoints;
     }

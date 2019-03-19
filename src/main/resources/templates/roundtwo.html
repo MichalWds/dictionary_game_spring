@@ -12,8 +12,16 @@
 
     <input type="text" name="name2">
     <input type="submit" value="Następne">
-
-
+<form>
+    <div th:if="${point2 > 4 }">
+        <a th:href="@{/r3}">
+            <button type="button">Idź dalej</button>
+        </a></div>
+</form>
+    <div th:if="${point2 > 2 }">
+        <a th:href="@{/}">
+            <button type="button">Wróć do rundy 1</button>
+        </a></div>
     <div th:text="${answer2}"></div>
     <input type="button" value="Sprawdz">
     <!--<button th:if="${falg}">  </button>-->
@@ -21,7 +29,7 @@
 
 </form>
 
-<form  action="/help2">
+<form action="/help2">
     <h3 th align="center" th:accept="${englishW}">
 
 
