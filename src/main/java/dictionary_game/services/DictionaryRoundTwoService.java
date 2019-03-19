@@ -11,9 +11,9 @@ import java.util.Random;
 @Service
 public class DictionaryRoundTwoService {
 
-
+    private String name2;
     private Random random = new Random();
-
+    private static String previousWord;
     int count;
     private int index;
     private String EWord;
@@ -45,10 +45,11 @@ public class DictionaryRoundTwoService {
     }
 
 
+
     public String getMessage2(String name2) {
         while (name2!=null){
 
-            if(!name2.equals(EWord) || name2==""){
+            if(!name2.equals(EWord) || name2 == ""){
                 user.substractPoints();
                 return "Błąd! -1pkt! " + " Twoja liczba punktów to: " + user.getNumberOfPoints();
             }else {
@@ -56,8 +57,7 @@ public class DictionaryRoundTwoService {
                 return "Świetnie! +1pkt! " + "Liczba Twoich punktów to : " + user.getNumberOfPoints();
             }
 
-        }
-        return "";
+        }return "";
     }
 
 }

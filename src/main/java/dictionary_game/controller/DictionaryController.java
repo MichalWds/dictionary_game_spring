@@ -1,7 +1,7 @@
 package dictionary_game.controller;
 
 import dictionary_game.LibraryRepository;
-//import dictionary_game.model.LibraryForEnglish;
+
 import dictionary_game.model.User;
 import dictionary_game.services.DictionaryRoundOneService;
 import dictionary_game.services.DictionaryRoundTwoService;
@@ -24,7 +24,7 @@ public class DictionaryController {
     private Random random = new Random();
     private User user = new User();
 
-    private static String previousWord;
+
 
     @Autowired
     DictionaryRoundOneService dictionaryRoundOneService;
@@ -71,8 +71,8 @@ public class DictionaryController {
     public String homePage2(@RequestParam(required = false) String name2, ModelMap modelMap) {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2));
-        modelMap.put("englishW", dictionaryRoundTwoService.getFirstPolishW());
-        modelMap.put("polishW", dictionaryRoundTwoService.getEnglishW());
+        modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
+        modelMap.put("englishW", dictionaryRoundTwoService.getEnglishW());
 
         return "roundtwo";
 
@@ -84,8 +84,8 @@ public class DictionaryController {
     public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap) {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2));
-        modelMap.put("englishW", dictionaryRoundTwoService.getFirstPolishW());
-        modelMap.put("polishW", dictionaryRoundTwoService.getEnglishW());
+        modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
+        modelMap.put("englishW", dictionaryRoundTwoService.getEnglishW());
 
         return "redirect:/roundtwo";
     }

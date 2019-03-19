@@ -4,7 +4,6 @@ import dictionary_game.LibraryRepository;
 import dictionary_game.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.plugin.liveconnect.ReplaceMethod;
 
 import java.util.Random;
 
@@ -12,6 +11,7 @@ import java.util.Random;
 public class DictionaryRoundOneService {
 
     private Random random = new Random();
+
     int count;
     private int index;
     private String EWord;
@@ -33,20 +33,18 @@ public class DictionaryRoundOneService {
     public String getFirstEnglishW() {
         count = (int) libraryRepository.count();
         index = random.nextInt((int) count);
-        return EWord = libraryRepository.findById(index + 1).get().getEnglishWord();
+        return EWord = libraryRepository.findById(index+1).get().getEnglishWord();
 
     }
 
-    public String getPolishW() {
+    public String getPolishW(){
 
-        return PWord = libraryRepository.findById(index + 1).get().getPolishWord();
+        return  PWord = libraryRepository.findById(index+1).get().getPolishWord();
     }
-
-
 
     public String getMessage(String name) {
 
-        while (name != null) {
+        while (name!=null) {
 
             if (!name.equals(PWord) || name == "") {
                 user.substractPoints();
@@ -56,8 +54,8 @@ public class DictionaryRoundOneService {
                 return "Dobrze! +1pkt! " + " Liczba Twoich punktów to : " + user.getNumberOfPoints();
             }
         }
-        return "";
-    }
+            return "";
+        }
 }
 //        } if (user.getNumberOfPoints()==10){
 //                return "Brawo! Czas przejść do drugiej rundy!";
