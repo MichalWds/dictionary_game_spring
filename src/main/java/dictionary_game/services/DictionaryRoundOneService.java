@@ -48,10 +48,10 @@ public class DictionaryRoundOneService {
 
             if (!name.equals(PWord) || name == "") {
                 user.substractPoints();
-                return "Źle! -1pkt! " + " Twoja liczba punktów to : " + user.getNumberOfPoints();
+                return "Źle! -1pkt! ";
             } else {
                 user.addPoint();
-                return "Dobrze! +1pkt! " + " Liczba Twoich punktów to : " + user.getNumberOfPoints();
+                return "Dobrze! +1pkt! ";
             }
         }
             return "";

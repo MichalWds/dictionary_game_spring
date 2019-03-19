@@ -22,9 +22,11 @@ import java.util.Random;
 public class DictionaryController {
 
     private Random random = new Random();
+
+    @Autowired
     private User user = new User();
 
-
+ private String  communicat = "Twoja liczba punktów to : ";
 
     @Autowired
     DictionaryRoundOneService dictionaryRoundOneService;
@@ -43,10 +45,13 @@ public class DictionaryController {
     @GetMapping("/")
     public String homePage(@RequestParam(required = false) String name, ModelMap modelMap) {
 
+//        if (user.getNumberOfPoints()==2)
+//            return "redirect:/r";
 
-        modelMap.put("answer", dictionaryRoundOneService.getMessage(name));
-        modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
-        modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
+            modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat +  user.getNumberOfPoints());
+            modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
+            modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
+            modelMap.put("points", user.getNumberOfPoints());
 
         return "roundone";
     }
@@ -57,6 +62,7 @@ public class DictionaryController {
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name)); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
+      //  modelMap.put("points", user.getNumberOfPoints());
         return "redirect:/roundone";
     }
 
@@ -70,12 +76,10 @@ public class DictionaryController {
     @GetMapping("/r")
     public String homePage2(@RequestParam(required = false) String name2, ModelMap modelMap) {
 
-        modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2));
+        modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2)+ communicat+ user.getNumberOfPoints());
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
         modelMap.put("englishW", dictionaryRoundTwoService.getEnglishW());
-
         return "roundtwo";
-
 
     }
 

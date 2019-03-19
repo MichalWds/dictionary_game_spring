@@ -51,10 +51,10 @@ public class DictionaryRoundTwoService {
 
             if(!name2.equals(EWord) || name2 == ""){
                 user.substractPoints();
-                return "Błąd! -1pkt! " + " Twoja liczba punktów to: " + user.getNumberOfPoints();
+                return "Błąd! -1pkt! " ;
             }else {
                 user.addPoint();
-                return "Świetnie! +1pkt! " + "Liczba Twoich punktów to : " + user.getNumberOfPoints();
+                return "Świetnie! +1pkt! " ;
             }
 
         }return "";
