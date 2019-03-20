@@ -5,6 +5,16 @@
     <title>Start</title>
 </head>
 <body>
-Ropozcznij gre
+<form>
+    <h2>Wpisz imię</h2>
+    <input type="text" name="name">
+
+    <h3>Ropozcznij nowa gre</h3>
+    <div th:if="${score < 1 }">
+        <a th:href="@{/}">
+
+            <button type="button">Start</button>
+        </a></div>
+</form>
 </body>
 </html>

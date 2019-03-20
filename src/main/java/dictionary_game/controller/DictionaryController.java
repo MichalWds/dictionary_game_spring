@@ -1,6 +1,6 @@
 package dictionary_game.controller;
 
-import dictionary_game.LibraryRepository;
+import dictionary_game.repositories.LibraryRepository;
 
 import dictionary_game.model.User;
 import dictionary_game.services.DictionaryRoundOneService;
@@ -139,6 +139,10 @@ public class DictionaryController {
 
     @GetMapping("/home")
     public String Start(ModelMap modelMap){
+
+        modelMap.put("start",user.getNumberOfPoints());
+
+        user.setNumberOfPoints(0);
         return "home";
     }
 

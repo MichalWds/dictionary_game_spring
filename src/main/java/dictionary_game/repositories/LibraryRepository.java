@@ -1,6 +1,7 @@
-package dictionary_game;
+package dictionary_game.repositories;
 
 
+        import dictionary_game.Library;
         import org.springframework.data.jpa.repository.Query;
         import org.springframework.data.repository.CrudRepository;
 

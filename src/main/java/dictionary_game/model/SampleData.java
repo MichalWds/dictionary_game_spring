@@ -2,7 +2,7 @@ package dictionary_game.model;
 
 
 import dictionary_game.Library;
-import dictionary_game.LibraryRepository;
+import dictionary_game.repositories.LibraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

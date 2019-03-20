@@ -1,6 +1,6 @@
 package dictionary_game.services;
 
-import dictionary_game.LibraryRepository;
+import dictionary_game.repositories.LibraryRepository;
 import dictionary_game.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
