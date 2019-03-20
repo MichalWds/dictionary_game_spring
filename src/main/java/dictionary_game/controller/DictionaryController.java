@@ -29,6 +29,7 @@ public class DictionaryController {
 
     private String communicat = "Twoja liczba punktów to : ";
 
+
     @Autowired
     DictionaryRoundOneService dictionaryRoundOneService;
 
@@ -53,7 +54,7 @@ public class DictionaryController {
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
-        modelMap.put("points", user.getNumberOfPoints());
+        modelMap.put("point", user.getNumberOfPoints());
 
         return "roundone";
     }
@@ -101,7 +102,7 @@ public class DictionaryController {
         modelMap.put("help2", dictionaryRoundTwoService.getEnglishW());
         return "help2";
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
     @GetMapping("/r3")
@@ -124,6 +125,21 @@ public class DictionaryController {
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
         return "redirect:/roundthree";
+    }
+
+
+    @GetMapping("/score")
+    public String showPoints(ModelMap modelMap){
+
+        modelMap.put("score", user.getNumberOfPoints());
+
+        return "score";
+    }
+
+
+    @GetMapping("/home")
+    public String Start(ModelMap modelMap){
+        return "home";
     }
 
 }

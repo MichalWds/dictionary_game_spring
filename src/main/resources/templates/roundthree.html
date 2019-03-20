@@ -27,10 +27,6 @@
     </form>
 
     <div th:text="${answer3}"></div>
-    <input type="button" value="Sprawdz">
-    <!--</form>-->
-    <!--<a th:href="@{/r}"><button>Idź dalej</button></a>    &lt;!&ndash;@ mowi nam o linku do getmappinga np  &ndash;&gt;-->
-    <!--</form>-->
 
 
     <form>
@@ -42,8 +38,10 @@
             <option value=1>Podpowiedź ANG</option>
             <option value="0"><p th:text="${englishW}"</p></option>
         </select>
-
-
+        <div th:if="${point3 > 0 }">
+            <a th:href="@{/score}">
+                <button type="button">Zakończ grę</button>
+            </a></div>
         </h3>
     </form>
 

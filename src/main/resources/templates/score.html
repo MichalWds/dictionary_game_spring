@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ScorePage</title>
 </head>
 <body>
+<h3>Twoja liczba punktów to : </h3>
+<div <a th:text="${score}"></a></div>
+<a>
+
+
+<form>
+    <div th:if="${score > 0 }">
+        <a th:href="@{/home}">
+            <button type="button">Wroc do strony glownej</button>
+        </a></div>
+</form>
+
 
 </body>
 </html>

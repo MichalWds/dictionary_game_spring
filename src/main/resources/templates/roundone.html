@@ -13,7 +13,7 @@
     <input type="text" name="name">
     <input type="submit" value="Następne">
     <!--<button th:if="${gonext}=2">  </button>-->
-    <div th:if="${points > 1 }">
+    <div th:if="${point > 1 }">
         <a th:href="@{/r}">
             <button type="button">Idź dalej</button>
         </a></div>          <!--@ mowi nam o linku do getmappinga np  -->
@@ -24,9 +24,7 @@
 
     <div th:text="${answer}"></div>
     <input type="button" value="Sprawdz">
-    <!--</form>-->
-    <!--<a th:href="@{/r}"><button>Idź dalej</button></a>    &lt;!&ndash;@ mowi nam o linku do getmappinga np  &ndash;&gt;-->
-    <!--</form>-->
+
 
     <form action="/help">
         <h3 th align="center" th:accept="${polishW}">
