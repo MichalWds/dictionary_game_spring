@@ -3,6 +3,7 @@ package dictionary_game.controller;
 import dictionary_game.repositories.LibraryRepository;
 
 import dictionary_game.model.User;
+import dictionary_game.repositories.UserRepository;
 import dictionary_game.services.DictionaryRoundOneService;
 import dictionary_game.services.DictionaryRoundThreeService;
 import dictionary_game.services.DictionaryRoundTwoService;
@@ -29,6 +30,8 @@ public class DictionaryController {
 
     private String communicat = "Twoja liczba punktów to : ";
 
+    @Autowired
+    UserRepository userRepository;
 
     @Autowired
     DictionaryRoundOneService dictionaryRoundOneService;
@@ -127,23 +130,5 @@ public class DictionaryController {
         return "redirect:/roundthree";
     }
 
-
-    @GetMapping("/score")
-    public String showPoints(ModelMap modelMap){
-
-        modelMap.put("score", user.getNumberOfPoints());
-
-        return "score";
-    }
-
-
-    @GetMapping("/home")
-    public String Start(ModelMap modelMap){
-
-        modelMap.put("start",user.getNumberOfPoints());
-
-        user.setNumberOfPoints(0);
-        return "home";
-    }
 
 }

@@ -42,7 +42,7 @@ public class WordList {
         dictionary.put("zgrzewanie kołków", "stud welding");
         dictionary.put("naświetlenie oczu", "arc eye");
         dictionary.put("uchwyt elektrodowy", "electrode holder");
-        dictionary.put("szkło ochronne", "welding glass");
+        dictionary.put("szkło spawalnicze", "welding glass");
         dictionary.put("filtr spawalniczy", "welding filter");
         dictionary.put("spawanie ściegiem krokowym", "back-step welding");
         dictionary.put("spoina ciągła", "continuous weld");

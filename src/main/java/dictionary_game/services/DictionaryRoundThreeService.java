@@ -11,12 +11,20 @@ import java.util.Random;
 public class DictionaryRoundThreeService {
 
     private Random random = new Random();
-
+    private int round =0;
     private int count;
     private int index;
     private String EWord;
     private String PWord;
    // private String HashWord;
+
+    public int getRound() {
+        return round;
+    }
+
+    public void setRound(int round) {
+        this.round = round;
+    }
 
     @Autowired
     private LibraryRepository libraryRepository;
@@ -46,9 +54,12 @@ public class DictionaryRoundThreeService {
     public String getHashEnglish(){
 
         String HashWord=EWord;
-        char randomChar = HashWord.charAt(random.nextInt(HashWord.length()));
-        HashWord = HashWord.replaceFirst(String.valueOf(randomChar),"*");
-        return HashWord;
+        for (int i = 0; i < round; i += 2) {
+            Character randomChar = HashWord.charAt(random.nextInt(HashWord.length()-1));
+            HashWord = HashWord.replaceFirst(String.valueOf(randomChar), "*");
+            if(randomChar=='*' || randomChar ==0) continue;
+        }
+            return HashWord;
 
 
     }
@@ -56,14 +67,19 @@ public class DictionaryRoundThreeService {
 
     public String getMessage(String name3) {
 
+
+
         while (name3 != null) {
 
             if (!name3.equals(EWord) || name3 == "") {
                 user.substractPoints();
-                return "Źle! -1pkt! ";
+                round--;
+                return "Niestety źle! -1pkt! ";
             } else {
                 user.addPoint();
-                return "Dobrze! +1pkt! ";
+                round++;
+                return "Tak trzymać! +1pkt! ";
+
             }
         }
         return "";
