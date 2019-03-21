@@ -1,38 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/players :: head"></head>
+
 </head>
 <body>
+<div class="background-welder">
 <form>
-    <!--<div class="container">-->
-        <!--<h2>Gracze</h2>-->
-        <!--&lt;!&ndash; to powinno byc w css \/  &ndash;&gt;-->
-        <!--<table class="table table-bordered">-->
-            <!--<p th:if="${message}"-->
-               <!--th:text="${message}"-->
-               <!--style="color: green"></p>-->
-            <!--<thead>-->
-            <!--<tr>-->
-                <!--<th>Id</th>-->
-                <!--<th>Name</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
 
-    <h3>Dodaj swoje imie</h3>
+    <h3>Rozpocznij Grę!</h3>
         <a th:href="@{/add}">
-            <button type="button">Dodaj</button>
-        </a>
-    <h3>Ropozcznij nowa gre</h3>
-    <div th:if="${score < 1 }">
-        <a th:href="@{/r1}">
             <button type="button">Start</button>
-        </a></div>
+        </a><h3>
 </form>
+</div>
 </body>
 </html>

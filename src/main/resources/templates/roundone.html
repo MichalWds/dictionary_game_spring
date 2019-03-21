@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+<head th:replace="/players :: head"></head>
     <meta charset="UTF-8">
     <title>Gra Słowna</title>
 </head>
 <body>
+<div class="background-roundone">
+    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
 <h2>Podaj tłumaczenie słowa: </h2>
 <form accept="/roundone">  <!-- po wykonaniu akcji, wraca do result-->
     <p th:text="${englishW}"></p>
@@ -17,14 +17,11 @@
         <a th:href="@{/r2}">
             <button type="button">Idź dalej</button>
         </a></div>          <!--@ mowi nam o linku do getmappinga np  -->
-
+    <div th:text="${answer}"></div>
+</form>
     <form>
 
     </form>
-
-    <div th:text="${answer}"></div>
-    <input type="button" value="Sprawdz">
-
 
     <form action="/help">
         <h3 th align="center" th:accept="${polishW}">
@@ -43,7 +40,8 @@
 
         </h3>
     </form>
-
+</div>
+</div>
 </form>
 </body>
 </html>

@@ -49,13 +49,13 @@ public class DictionaryRoundOneService {
 
             if (!name.equals(PWord) || name == "") {
 
-                GameScore.score -= user.substractPoints();
-                GameScore.getScore();
+                user.substractPoints();
+
                 return "Źle! -1pkt! ";
             } else {
 
-                GameScore.score += user.addPoint();
-                GameScore.getScore();
+                user.addPoint();
+
                 return "Dobrze! +1pkt! ";
             }
 

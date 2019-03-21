@@ -42,8 +42,6 @@ public class MainController {
     }
 
 
-
-
     @GetMapping("/home")
     public String Start(ModelMap modelMap){
 

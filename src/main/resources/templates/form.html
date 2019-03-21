@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="/players :: head"></head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -13,12 +13,12 @@
 
     <table>
         <tr>
-            <td>Podaj swoje imię zawodniku</td>
+            <td>Podaj imię:</td>
             <td><input type="text" th:field="*{name}" /></td>
             <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
         </tr>
         <tr>
-            <td><button type="submit">Dodaj</button></td>
+            <td><button type="submit">Graj</button></td>
         </tr>
     </table>
 </form>

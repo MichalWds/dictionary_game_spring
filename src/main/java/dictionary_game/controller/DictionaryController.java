@@ -20,7 +20,7 @@ import javax.persistence.Id;
 import java.util.Random;
 
 
-@Scope(value = "session")  //dzieki temu, kazdy uzytkownik bdedzie mial swoj kontroller, TestKontroller
+@Scope(value = "session")
 @Controller
 public class DictionaryController {
 
@@ -52,8 +52,7 @@ public class DictionaryController {
 
 
     @GetMapping("/r1")
-    public String homePage(@RequestParam(required = false) String name
-                            ,ModelMap modelMap) {
+    public String homePage(@RequestParam(required = false) String name, ModelMap modelMap) {
 
 
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
@@ -62,14 +61,14 @@ public class DictionaryController {
         modelMap.put("point", user.getNumberOfPoints());
 
 
-        return "roundone";
+        return "roundone";     //roundone
     }
 
     @GetMapping("/roundone")
     public String showEnglish(@RequestParam(required = false) String name,
                               ModelMap modelMap) {
 
-        modelMap.put("answer", dictionaryRoundOneService.getMessage(name)); //kolejnosc istotna!
+        modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints()); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
         return "redirect:/roundone";
@@ -84,8 +83,7 @@ public class DictionaryController {
 
     @GetMapping("/r2")
     public String homePage2(@RequestParam(required = false) String name2,
-                            ModelMap modelMap)
-                            {
+                            ModelMap modelMap) {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2) + communicat + user.getNumberOfPoints());
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
@@ -97,8 +95,7 @@ public class DictionaryController {
 
 
     @GetMapping("/roundtwo")
-    public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap)
-                             {
+    public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap) {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2));
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
@@ -114,18 +111,16 @@ public class DictionaryController {
     }
 
 
-
     @GetMapping("/r3")
     public String homePage3(@RequestParam(required = false) String name3,
-                           ModelMap modelMap) {
+                            ModelMap modelMap) {
 
 
         modelMap.put("answer3", dictionaryRoundThreeService.getMessage(name3) + communicat + user.getNumberOfPoints());
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
-        modelMap.put("hashWord",dictionaryRoundThreeService.getHashEnglish());
+        modelMap.put("hashWord", dictionaryRoundThreeService.getHashEnglish());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
         modelMap.put("point3", user.getNumberOfPoints());
-
 
 
         return "roundthree";
