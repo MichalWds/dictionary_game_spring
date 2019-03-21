@@ -7,11 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.*;
+
 
 
 @Scope(value = "session")
@@ -25,13 +22,6 @@ public class MainController {
     @Autowired
     User user;
 
-    @GetMapping("/score")
-    public String showPoints(ModelMap modelMap){
-
-        modelMap.put("score", user.getNumberOfPoints());
-
-        return "score";
-    }
 
 
     @GetMapping("/home")
@@ -43,34 +33,25 @@ public class MainController {
         return "home";
     }
 
-    @GetMapping(path = "/add")
-    public @ResponseBody
-    String addNewUser(@RequestParam String name){
 
-        User n = new User();
-        n.setName(name);
+    @GetMapping("/score")
+    public String showPoints(ModelMap modelMap){
 
-        userRepository.save(n);
-        return "Saved";
+        modelMap.put("score", user.getNumberOfPoints());
+
+        return "score";
     }
 
-    @GetMapping(path = "/all")
+
+    @GetMapping(path = "/all")        //JSON
     public @ResponseBody
     Iterable<User> getAllUsers() {
-        // This returns a JSON or XML with the users
-        return userRepository.findAll();      //znajduje wszystkich userow w bazie danych   // czyli robic selecta
+        return userRepository.findAll();
     }
 
 
-    @GetMapping("people/{id}/delete")
-        public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
-        User user = userRepository.findById(id).get();
-        userRepository.deleteById(id);
 
 
-        redirectAttributes.addFlashAttribute("message", "usunieto zawodnika " + user.getName() + " z bazy danych");
-        return "redirect:/home";
-    }
 
 
 

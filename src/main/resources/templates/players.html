@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Players</title>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-$END$
-</body>
+<div class="container">
+    <h2>Gracze</h2>
+    <!-- to powinno byc w css \/  -->
+    <table class="table table-bordered">
+        <p th:if="${message}"
+           th:text="${message}"
+           style="color: green"></p>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Number of Points</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${user}">
+            <td th:text="${user.id}">
+            <td th:text="${user.name}">
+            <td th:text="${user.numberOfPoints}">
+            <td>
+                <a data-th-href="@{|/players/${user.id}/delete|}">
+                    Usuń
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a data-th-href="@{|/home|}">
+        Przejdz do strony głownej
+    </a>
+
 </html>
