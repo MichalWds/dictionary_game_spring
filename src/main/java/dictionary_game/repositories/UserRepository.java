@@ -11,5 +11,8 @@ public interface UserRepository extends CrudRepository<User,Integer> {
     @Query("SELECT p FROM User p ORDER BY p.id")
     List<User> findAllSortById();
 
+    @Query("select p from User p where p.name = ?1")
+    User findByName(String name);
+
     //search by name
 }

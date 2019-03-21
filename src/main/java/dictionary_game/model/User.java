@@ -55,13 +55,13 @@ public class User {
         this.numberOfPoints = numberOfPoints;
     }
 
-    public void addPoint() {
-        numberOfPoints++;
+    public int addPoint() {
+        return numberOfPoints++;
 
     }
 
-    public void substractPoints() {
-        numberOfPoints--;
+    public int substractPoints() {
+      return numberOfPoints--;
 
     }
 

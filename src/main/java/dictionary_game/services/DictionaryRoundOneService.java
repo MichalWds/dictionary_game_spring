@@ -2,6 +2,7 @@ package dictionary_game.services;
 
 import dictionary_game.repositories.LibraryRepository;
 import dictionary_game.model.User;
+import dictionary_game.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class DictionaryRoundOneService {
 
     @Autowired
     private LibraryRepository libraryRepository;
+
 
     @Autowired
     private User user;
@@ -46,15 +48,22 @@ public class DictionaryRoundOneService {
         while (name != null) {
 
             if (!name.equals(PWord) || name == "") {
-                user.substractPoints();
+
+                GameScore.score -= user.substractPoints();
+                GameScore.getScore();
                 return "Źle! -1pkt! ";
             } else {
-                user.addPoint();
+
+                GameScore.score += user.addPoint();
+                GameScore.getScore();
                 return "Dobrze! +1pkt! ";
             }
+
+
         }
         return "";
     }
+
 }
 
 

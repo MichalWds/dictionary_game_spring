@@ -16,7 +16,7 @@ public class DictionaryRoundThreeService {
     private int index;
     private String EWord;
     private String PWord;
-   // private String HashWord;
+
 
     public int getRound() {
         return round;
@@ -52,12 +52,14 @@ public class DictionaryRoundThreeService {
 
 
     public String getHashEnglish(){
-
+            int ascii = 42;
+            Character randomAscii = (char) ascii;
         String HashWord=EWord;
         for (int i = 0; i < round; i += 2) {
-            Character randomChar = HashWord.charAt(random.nextInt(HashWord.length()-1));
-            HashWord = HashWord.replaceFirst(String.valueOf(randomChar), "*");
-            if(randomChar=='*' || randomChar ==0) continue;
+            char randomChar = HashWord.charAt(random.nextInt(HashWord.length()-1));
+            HashWord = HashWord.replaceFirst(String.valueOf(randomChar), randomAscii.toString() );
+            if(randomChar==randomAscii || randomChar==0) continue;
+            System.out.println(randomAscii);
         }
             return HashWord;
 
@@ -72,11 +74,15 @@ public class DictionaryRoundThreeService {
         while (name3 != null) {
 
             if (!name3.equals(EWord) || name3 == "") {
-                user.substractPoints();
+                GameScore.score -= user.substractPoints();
+                GameScore.getScore();
                 round--;
+
                 return "Niestety źle! -1pkt! ";
             } else {
-                user.addPoint();
+                GameScore.score += user.addPoint();
+                GameScore.getScore();
+
                 round++;
                 return "Tak trzymać! +1pkt! ";
 

@@ -46,10 +46,13 @@ public class DictionaryRoundTwoService {
         while (name2 != null) {
 
             if (!name2.equals(EWord) || name2 == "") {
-                user.substractPoints();
+                GameScore.score -=  user.substractPoints();
+                GameScore.getScore();
                 return "Błąd! -1pkt! ";
             } else {
-                user.addPoint();
+
+                GameScore.score += user.addPoint();
+                GameScore.getScore();
                 return "Świetnie! +1pkt! ";
             }
 

@@ -7,6 +7,7 @@ import dictionary_game.repositories.UserRepository;
 import dictionary_game.services.DictionaryRoundOneService;
 import dictionary_game.services.DictionaryRoundThreeService;
 import dictionary_game.services.DictionaryRoundTwoService;
+import dictionary_game.services.GameScore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -50,8 +51,9 @@ public class DictionaryController {
     private Integer id;
 
 
-    @GetMapping("/")
-    public String homePage(@RequestParam(required = false) String name, ModelMap modelMap) {
+    @GetMapping("/r1")
+    public String homePage(@RequestParam(required = false) String name
+                            ,ModelMap modelMap) {
 
 
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
@@ -59,11 +61,13 @@ public class DictionaryController {
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
         modelMap.put("point", user.getNumberOfPoints());
 
+
         return "roundone";
     }
 
     @GetMapping("/roundone")
-    public String showEnglish(@RequestParam(required = false) String name, ModelMap modelMap) {
+    public String showEnglish(@RequestParam(required = false) String name,
+                              ModelMap modelMap) {
 
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name)); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
@@ -78,8 +82,10 @@ public class DictionaryController {
     }
 
 
-    @GetMapping("/r")
-    public String homePage2(@RequestParam(required = false) String name2, ModelMap modelMap) {
+    @GetMapping("/r2")
+    public String homePage2(@RequestParam(required = false) String name2,
+                            ModelMap modelMap)
+                            {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2) + communicat + user.getNumberOfPoints());
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
@@ -91,7 +97,8 @@ public class DictionaryController {
 
 
     @GetMapping("/roundtwo")
-    public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap) {
+    public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap)
+                             {
 
         modelMap.put("answer2", dictionaryRoundTwoService.getMessage2(name2));
         modelMap.put("polishW", dictionaryRoundTwoService.getFirstPolishW());
@@ -109,7 +116,8 @@ public class DictionaryController {
 
 
     @GetMapping("/r3")
-    public String homePage3(@RequestParam(required = false) String name3, ModelMap modelMap) {
+    public String homePage3(@RequestParam(required = false) String name3,
+                           ModelMap modelMap) {
 
 
         modelMap.put("answer3", dictionaryRoundThreeService.getMessage(name3) + communicat + user.getNumberOfPoints());
@@ -118,15 +126,21 @@ public class DictionaryController {
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
         modelMap.put("point3", user.getNumberOfPoints());
 
+
+
         return "roundthree";
     }
 
     @GetMapping("/roundthree")
-    public String showHash(@RequestParam(required = false) String name3, ModelMap modelMap) {
+    public String showHash(@RequestParam(required = false) String name3,
+                           ModelMap modelMap) {
+
 
         modelMap.put("answer", dictionaryRoundThreeService.getMessage(name3)); //kolejnosc istotna!
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
+
+
         return "redirect:/roundthree";
     }
 
