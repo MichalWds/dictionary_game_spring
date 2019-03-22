@@ -6,17 +6,17 @@
 <div class="background-roundone">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
 <h2>Podaj tłumaczenie słowa: </h2>
-<form accept="/roundone">  <!-- po wykonaniu akcji, wraca do result-->
+<form accept="/roundone">
     <p th:text="${englishW}"></p>
     <label>Przetłumacz</label>
 
     <input type="text" name="name">
     <input type="submit" value="Następne">
-    <!--<button th:if="${gonext}=2">  </button>-->
+
     <div th:if="${point > 1 }">
         <a th:href="@{/r2}">
             <button type="button">Idź dalej</button>
-        </a></div>          <!--@ mowi nam o linku do getmappinga np  -->
+        </a></div>
     <div th:text="${answer}"></div>
 </form>
     <form>

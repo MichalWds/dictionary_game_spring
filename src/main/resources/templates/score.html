@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="/players :: head"></head>
-<!--<div class="score-header"></div>-->
+<div class="background-score">
+    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
 </head>
 
 <body>
@@ -11,7 +12,7 @@
 
 <form>
     <div th:if="${score > 0 }">
-        <a th:href="@{/home}">
+        <a th:href="@{/}">
             <button type="button">Wroc do strony glownej</button>
         </a></div>
 </form>

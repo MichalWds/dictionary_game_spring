@@ -37,8 +37,6 @@ public class PersonController {
     }
 
 
-//todo dodac add i ogarnac form.
-
 
     @GetMapping("/add")
     public String show(ModelMap modelMap) {

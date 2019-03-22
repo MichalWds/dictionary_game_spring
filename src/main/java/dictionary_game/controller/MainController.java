@@ -26,7 +26,7 @@ public class MainController {
     User user;
 
 
-    @PostMapping("/")
+    @PostMapping("/home")
     public String create(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "form";
@@ -42,7 +42,7 @@ public class MainController {
     }
 
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String Start(ModelMap modelMap){
 
         modelMap.put("start",user.getNumberOfPoints());

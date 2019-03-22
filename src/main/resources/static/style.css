@@ -2,6 +2,66 @@ body{
 
 }
 
+.background-help {
+    background-image:url("https://www.kopar.fi/website/image/ir.attachment/999_e85d386/datas") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.background-help2 {
+    background-image:url("http://www.buflovak.com/media/1406/chemical-industry.jpg?width=3486&height=2316") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.background-roundtwo {
+    background-image:url("http://www.nolitaonline.com/wp-content/uploads/2018/07/Shielded_Metal_Arc_Welding_.jpg") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.background-roundthree {
+    background-image:url("https://www.beachmarketing.co.uk/wp-content/uploads/2017/10/slide-welding.jpg") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.background-score {
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/0/05/GOPR4674.jpg") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.background-players {
+    background-image:url("http://www.a3automate.org/wp-content/uploads/2017/05/How-to-Weld-Non-Standard-Parts-Using-Automation.jpg") ;
+    height: 100vh;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
 
 .background-welder {
     background-image:url("https://upload.wikimedia.org/wikipedia/commons/4/4d/Tig_Welding.jpg") ;
@@ -20,31 +80,19 @@ body{
     background-repeat: no-repeat;
 }
 .content {
-
     color: white;
-
     font-size: 20px;
-
 }
-
 .content-header {
-
     font-family: 'Oleo Script', cursive;
-
     color: white;
-
     font-size: 30px;
 
 }
-
 .caption {
-
     color: #ffffff !important;
-
 }
-
 .form-col {
-
     margin-top: 20px;
-
 }
+/* button for start  */

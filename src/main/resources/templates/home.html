@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/players :: head"></head>
-
+<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
 </head>
 <body>
 <div class="background-welder">
-<form>
 
+<div style="text-align: center;vertical-align: center;padding-top:150px;">
     <h3>Rozpocznij Grę!</h3>
-        <a th:href="@{/add}">
-            <button type="button">Start</button>
-        </a><h3>
+
+<form>
+    <a align="center" th:href="@{/add}">
+    <button align="center" type="button" class="btn btn-primary btn-lg">START</button>
+    </a>
 </form>
+
+
+
+</div>
 </div>
 </body>
 </html>
