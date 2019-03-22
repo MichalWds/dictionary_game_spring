@@ -2,10 +2,12 @@
 <html lang="en">
 <head th:replace="/players :: head"></head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>WriteYourName</title>
+
 </head>
 <body>
-
+<div class="background-roundone">
+    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
 
 <form th:action="@{/home}" th:object="${user}" method="post">
     <input type="hidden" th:field="*{id}">
@@ -22,7 +24,7 @@
         </tr>
     </table>
 </form>
-
+    </div>
 
 </body>
 </html>
