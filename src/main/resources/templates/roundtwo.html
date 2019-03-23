@@ -7,24 +7,26 @@
     <title>Gra Słowna</title>
 </head>
 <body>
-<h2>Podaj tłumaczenie słowa: </h2>
+<h1>Podaj tłumaczenie słowa: </h1>
 <form accept="/roundtwo">  <!-- po wykonaniu akcji, wraca do result-->
-    <p th:text="${polishW}"></p>
-    <label>Przetłumacz</label>
+    <h2> <p th:text="${polishW}"></p></h2>
+    <label><h3>Przetłumacz</h3></label>
 
     <input type="text" name="name2">
     <input type="submit" value="Następne">
 <form>
     <div th:if="${point2 > 4 }">
         <a th:href="@{/r3}">
-            <button type="button">Idź dalej</button>
+            <button class="btn btn-primary btn-lg" type="button">Idź dalej</button>
         </a></div>
-</form>
+</form><br>
     <div th:if="${point2 > 2 }">
         <a th:href="@{/r1}">
-            <button type="button">Wróć do rundy 1</button>
-        </a></div>
-    <div th:text="${answer2}"></div>
+            <button class="btn btn-primary btn-lg" type="button">Wróć do rundy 1</button>
+        </a></div></br>
+    <br>
+   <h6> <div th:text="${answer2}"></div></h6>
+    </br>
 </form>
 
 </form>
@@ -39,10 +41,14 @@
     </h3>
 </form>
 <form>
-    <select name="submit">
-        <option value=1>Podpowiedź</option>
-        <option value="0"><p th:text="${englishW}"</p></option>
-    </select>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Podpowiedź <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a th:text="${englishW}">ENG</a></li>
+
+        </ul>
+    </div>
 
     </h3>
 </form>

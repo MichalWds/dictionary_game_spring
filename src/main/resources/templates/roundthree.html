@@ -2,49 +2,71 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="/players :: head"></head>
 <div class="background-roundthree">
-    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
+    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1100px; margin-left:100px;">
     <meta charset="UTF-8">
     <title>Gra Słowna</title>
 </head>
 <body>
-<h2>Uzupełnij brakujące znaki i wpisz poprawnie całe słowo </h2>
-<form accept="/roundthree">  <!-- po wykonaniu akcji, wraca do result-->
-    <p th:text="${hashWord}"></p>
-    <label>Przetłumacz</label>
+<h1>Uzupełnij brakujące znaki i wpisz poprawnie całe słowo. </h1>
+<form accept="/roundthree">
+    <h2> <p th:text="${hashWord}"></p></h2>
+    <label><h3>Przepisz: </h3></label>
 
     <input type="text" name="name3">
     <input type="submit" value="Następne">
+
+
+</form>
+<br>
+
+</br>
+
+<form>
+
+
     <form>
+        <br>
         <div th:if="${point3 > 3 }">
             <a th:href="@{/r2}">
-                <button type="button">Wróć do rundy 2</button>
-            </a></div>
+                <button class="btn btn-primary btn-lg" type="button">Wróć do rundy 2</button>
+            </a>
+        </div>
+    </br>
     </form>
 
     <form>
+
         <div th:if="${point3 > 3 }">
             <a th:href="@{/r1}">
-                <button type="button">Wróć do rundy 1</button>
+                <button class="btn btn-primary btn-lg" type="button">Wróć do rundy 1</button>
             </a></div>
-    </form>
-
-    <div th:text="${answer3}"></div>
-
-
-    <form>
-        <select name="submit">
-        <option value=1>Podpowiedź PL</option>
-        <option value="0"><p th:text="${polishW}"</p></option>
-    </select>
-        <select name="submit">
-            <option value=1>Podpowiedź ANG</option>
-            <option value="0"><p th:text="${englishW}"</p></option>
-        </select>
+<table><td>
+    <br>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Podpowiedź PL <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a th:text="${polishW}">PL</a></li>
+            </ul>
+        </div></td>
+    </br>
+<tr>
+       <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Podpowiedź ENG<span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a th:text="${englishW}">ENG</a></li>
+            </ul>
+        </div>
+    </tr>
+</table>
+        <br>
         <div th:if="${point3 > 0 }">
             <a th:href="@{/score}">
-                <button type="button">Zakończ grę</button>
+                <button  class="btn btn-primary btn-lg" type="button">Zakończ grę</button>
             </a></div>
-        </h3>
+        </br>
+
     </form>
 
 </form>

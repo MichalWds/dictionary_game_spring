@@ -3,26 +3,31 @@
 <head th:replace="/players :: head"></head>
     <meta charset="UTF-8">
     <title>WriteYourName</title>
-
+<style>
+    h1 {color: crimson}
+</style>
 </head>
 <body>
 <div class="background-roundone">
-    <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
+    <div style="background-color: rgba(100, 0, 400, 0.3);padding:200px;width: 50%; margin-left:100px; content: '50';">
 
 <form th:action="@{/home}" th:object="${user}" method="post">
     <input type="hidden" th:field="*{id}">
-    <!-- -->
-
+    <div align="center">
+    <h1>Podaj imię:</h1>
+<br>
     <table>
         <tr>
-            <td>Podaj imię:</td>
             <td><input type="text" th:field="*{name}" /></td>
             <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
         </tr>
-        <tr>
-            <td><button type="submit">Graj</button></td>
-        </tr>
+            <tr >
+
+            <td><button class="btn btn-primary btn-lg" type="submit">Graj</button></td>
+            </tr>
     </table>
+        </br>
+    </div>
 </form>
     </div>
 

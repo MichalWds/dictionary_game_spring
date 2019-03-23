@@ -5,40 +5,41 @@
 <body>
 <div class="background-roundone">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
-<h2>Podaj tłumaczenie słowa: </h2>
+<h1>Podaj tłumaczenie słowa: </h1>
 <form accept="/roundone">
-    <p th:text="${englishW}"></p>
-    <label>Przetłumacz</label>
-
+    <h2><p th:text="${englishW}"></p></h2>
+    <label><h3>Przetłumacz</h3></label>
     <input type="text" name="name">
     <input type="submit" value="Następne">
 
+
     <div th:if="${point > 1 }">
         <a th:href="@{/r2}">
-            <button type="button">Idź dalej</button>
+            <button type="button" class="btn btn-primary btn-lg">Idź dalej</button>
         </a></div>
-    <div th:text="${answer}"></div>
+    <br>
+    <h6> <div th:text="${answer}"></div></h6>
+       </br>
 </form>
-    <form>
-
-    </form>
 
     <form action="/help">
         <h3 th align="center" th:accept="${polishW}">
 
 
-            <input type="hidden" th:value="${polishW}" name="Podpowiedz"/>
-            Podpowiedź
-            <input value="tak" type="submit">
+
+            Utrwal
+            <input value="Przejdź" type="submit">
         </h3>
     </form>
     <form>
-        <select name="submit">
-            <option value=1>Podpowiedź</option>
-            <option value="0"><p th:text="${polishW}"</p></option>
-        </select>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Podpowiedź <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a th:text="${polishW}">PL</a></li>
+            </ul>
+        </div>
 
-        </h3>
     </form>
 </div>
 </div>
