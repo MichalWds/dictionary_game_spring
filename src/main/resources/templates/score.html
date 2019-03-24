@@ -7,13 +7,13 @@
 
 <body>
 <h3>Twoja liczba punktów to : </h3>
-<div <a th:text="${score}"></a></div>
-<a>
+<h1><div> <a th:text="${score}"></a></div>
+    </h1>
 
 <form>
     <div th:if="${score > 0 }">
         <a th:href="@{/}">
-            <button type="button">Wroc do strony glownej</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Wroc do strony glownej</button>
         </a></div>
 </form>
 <div>
