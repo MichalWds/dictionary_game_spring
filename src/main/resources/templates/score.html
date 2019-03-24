@@ -3,23 +3,24 @@
 <head th:replace="/players :: head"></head>
 <div class="background-score">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
-</head>
+        </head>
 
-<body>
-<h3>Twoja liczba punktów to : </h3>
-<h1><div> <a th:text="${score}"></a></div>
-    </h1>
+        <body>
+        <h3>Twoja liczba punktów to : </h3>
+        <h1>
+            <div><a th:text="${score}"></a></div>
+        </h1>
 
-<form>
-    <div th:if="${score > 0 }">
-        <a th:href="@{/}">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Wroc do strony glownej</button>
-        </a></div>
-</form>
-<div>
-    <a data-th-href="@{|/players|}">
-        Przejdz do listy wyników
-    </a>
-</div>
-</body>
+        <form>
+            <div th:if="${score > 0 }">
+                <a th:href="@{/}">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Wroc do strony glownej</button>
+                </a></div>
+        </form>
+        <div>
+            <a data-th-href="@{|/players|}">
+                Przejdz do listy wyników
+            </a>
+        </div>
+        </body>
 </html>

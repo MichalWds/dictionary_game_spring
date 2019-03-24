@@ -19,7 +19,7 @@ public class Library {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;  // zeby nadawac id w mysql
+    private Integer id;
 
     @NotNull
     private String englishWord;
@@ -64,13 +64,7 @@ public class Library {
     @Override
     public String toString() {
         return englishWord + polishWord;
-        // to co nam zwraca z library w wywolaniu
-    }// lepiej wrzucic kolejnego to stringa do innej klasy zeby byla czystosc, klodu ( w momencie gdy robimy polishword
 
-//    public String getMessage() {
-//
-//        if (polishWord.equalsIgnoreCase(dictionaryController.getPWord()));
-//        return "ass";
-//}
+    }
 
 }

@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="/players :: head"></head>
-    <meta charset="UTF-8">
-    <title>Podpowiedź</title>
+<meta charset="UTF-8">
+<title>Podpowiedź</title>
 </head>
 <body>
 
 <div class="background-help">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
 
-<form action="/r1">
-    <h1> Tłumaczenie slowa to : </h2>
-    <h3 tłumaczenie słowa to</h3>
-    <p th:text="${help}"></p>
+        <form action="/r1">
+            <h1> Tłumaczenie slowa to : </h2>
+                <h3 tłumaczenie słowa to</h3>
+                <p th:text="${help}"></p>
 
-    <input type="text" name="polishW" style="margin-top: 2px;">
-    <input type="submit" value="wpisz i wróć" class="btn btn-primary btn-lg">
+                <input type="text" name="polishW" style="margin-top: 2px;">
+                <input type="submit" value="wpisz i wróć" class="btn btn-primary btn-lg">
 
 
-
-</form>
+        </form>
 </body>
 </html>

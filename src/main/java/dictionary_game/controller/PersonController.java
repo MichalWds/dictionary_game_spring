@@ -37,16 +37,12 @@ public class PersonController {
     }
 
 
-
     @GetMapping("/add")
     public String show(ModelMap modelMap) {
         modelMap.put("user", new User());
 
         return "form";
     }
-
-
-
 
 
 }

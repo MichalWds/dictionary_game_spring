@@ -11,7 +11,7 @@ import java.util.Random;
 public class DictionaryRoundThreeService {
 
     private Random random = new Random();
-    private int round =0;
+    private int round = 0;
     private int count;
     private int index;
     private String EWord;
@@ -51,34 +51,30 @@ public class DictionaryRoundThreeService {
     }
 
 
-    public String getHashEnglish(){
+    public String getHashEnglish() {
 
-        String HashWord=EWord;
+        String HashWord = EWord;
         for (int i = 0; i < round; i += 2) {
-            char randomChar = HashWord.charAt(random.nextInt(HashWord.length()-1));
-            HashWord = HashWord.replaceFirst(String.valueOf(randomChar), "#" );
-            if(randomChar=='#' || randomChar==0) continue;
+            char randomChar = HashWord.charAt(random.nextInt(HashWord.length() - 1));
+            HashWord = HashWord.replaceFirst(String.valueOf(randomChar), "#");
+            if (randomChar == '#' || randomChar == 0) continue;
 
         }
-            return HashWord;
-
+        return HashWord;
 
     }
 
-
     public String getMessage(String name3) {
-
-
 
         while (name3 != null) {
 
             if (!name3.equals(EWord) || name3 == "") {
-               user.substractPoints();
+                user.substractPoints();
                 round--;
 
                 return "Niestety źle! -1pkt! ";
             } else {
-              user.addPoint();
+                user.addPoint();
 
                 round++;
                 return "Tak trzymać! +1pkt! ";

@@ -3,55 +3,59 @@
 <head th:replace="/players :: head"></head>
 <div class="background-roundtwo">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
-    <meta charset="UTF-8">
-    <title>Gra Słowna</title>
-</head>
-<body>
-<h1>Podaj tłumaczenie słowa: </h1>
-<form accept="/roundtwo">  <!-- po wykonaniu akcji, wraca do result-->
-    <h2> <p th:text="${polishW}"></p></h2>
-    <label><h3>Przetłumacz</h3></label>
+        <meta charset="UTF-8">
+        <title>Gra Słowna</title>
+        </head>
+        <body>
+        <h1>Podaj tłumaczenie słowa: </h1>
+        <form accept="/roundtwo">  <!-- po wykonaniu akcji, wraca do result-->
+            <h2><p th:text="${polishW}"></p></h2>
+            <label><h3>Przetłumacz</h3></label>
 
-    <input type="text" name="name2">
-    <input type="submit" value="Następne" class="btn btn-primary btn-lg">
-<form>
-    <div th:if="${point2 > 4 }">
-        <a th:href="@{/r3}">
-            <button class="btn btn-primary btn-lg" type="button">Idź dalej</button>
-        </a></div>
-</form><br>
-    <div th:if="${point2 > 2 }">
-        <a th:href="@{/r1}">
-            <button class="btn btn-primary btn-lg" type="button">Wróć do rundy 1</button>
-        </a></div></br>
-    <br>
-   <h6> <div th:text="${answer2}"></div></h6>
-    </br>
-</form>
+            <input type="text" name="name2">
+            <input type="submit" value="Następne" class="btn btn-primary btn-lg">
+            <form>
+                <div th:if="${point2 > 4 }">
+                    <a th:href="@{/r3}">
+                        <button class="btn btn-primary btn-lg" type="button">Idź dalej</button>
+                    </a></div>
+            </form>
+            <br>
+            <div th:if="${point2 > 2 }">
+                <a th:href="@{/r1}">
+                    <button class="btn btn-primary btn-lg" type="button">Wróć do rundy 1</button>
+                </a></div>
+            </br>
+            <br>
+            <h6>
+                <div th:text="${answer2}"></div>
+            </h6>
+            </br>
+        </form>
 
-</form>
+        </form>
 
-<form action="/help2">
-    <h3 th align="center" th:accept="${englishW}">
+        <form action="/help2">
+            <h3 th align="center" th:accept="${englishW}">
 
-        <!--<input type="hidden" th:value="${englishW}" name="Podpowiedz">-->
-        Utrwal
-        <input value="Idź" type="submit" class="btn btn-primary btn-lg">
-    </h3>
-</form>
-<form>
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            Podpowiedź <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-            <li><a th:text="${englishW}">ENG</a></li>
 
-        </ul>
-    </div>
+                Utrwal
+                <input value="Idź" type="submit" class="btn btn-primary btn-lg">
+            </h3>
+        </form>
+        <form>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Podpowiedź <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a th:text="${englishW}">ENG</a></li>
 
-    </h3>
-</form>
+                </ul>
+            </div>
 
-</form>
-</body>
+            </h3>
+        </form>
+
+        </form>
+        </body>
 </html>

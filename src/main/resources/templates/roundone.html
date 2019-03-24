@@ -1,47 +1,48 @@
 <head th:replace="/players :: head"></head>
-    <meta charset="UTF-8">
-    <title>Gra Słowna</title>
+<meta charset="UTF-8">
+<title>Gra Słowna</title>
 </head>
 <body>
 <div class="background-roundone">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
-<h1>Podaj tłumaczenie słowa: </h1>
-<form accept="/roundone">
-    <h2><p th:text="${englishW}"></p></h2>
-    <label><h3>Przetłumacz</h3></label>
-    <input type="text" name="name">
-    <input type="submit" class="btn btn-primary" value="Następne">
+        <h1>Podaj tłumaczenie słowa: </h1>
+        <form accept="/roundone">
+            <h2><p th:text="${englishW}"></p></h2>
+            <label><h3>Przetłumacz</h3></label>
+            <input type="text" name="name">
+            <input type="submit" class="btn btn-primary" value="Następne">
 
 
-    <div th:if="${point > 1 }">
-        <a th:href="@{/r2}">
-            <button type="button" class="btn btn-primary btn-lg">Idź dalej</button>
-        </a></div>
-    <br>
-    <h6> <div th:text="${answer}"></div></h6>
-       </br>
-</form>
+            <div th:if="${point > 1 }">
+                <a th:href="@{/r2}">
+                    <button type="button" class="btn btn-primary btn-lg">Idź dalej</button>
+                </a></div>
+            <br>
+            <h6>
+                <div th:text="${answer}"></div>
+            </h6>
+            </br>
+        </form>
 
-    <form action="/help">
-        <h3 th align="center" th:accept="${polishW}">
+        <form action="/help">
+            <h3 th align="center" th:accept="${polishW}">
 
 
+                Utrwal
+                <input value="Przejdź" type="submit" class="btn btn-primary">
+            </h3>
+        </form>
+        <form>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Podpowiedź <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a th:text="${polishW}">PL</a></li>
+                </ul>
+            </div>
 
-            Utrwal
-            <input value="Przejdź" type="submit" class="btn btn-primary" >
-        </h3>
-    </form>
-    <form>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Podpowiedź <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a th:text="${polishW}">PL</a></li>
-            </ul>
-        </div>
-
-    </form>
-</div>
+        </form>
+    </div>
 </div>
 </form>
 </body>

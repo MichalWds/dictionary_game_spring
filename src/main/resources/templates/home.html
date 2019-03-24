@@ -3,23 +3,25 @@
 <head th:replace="/players :: head"></head>
 
 <style>
-h1 { color: #FF0000; }
+    h1 {
+        color: #FF0000;
+    }
 </style>
 </head>
 <body>
 <div class="background-welder">
 
-<div style="text-align: center;vertical-align: center;padding-top:150px;">
-    <h1> Rozpocznij Grę!</h1>
+    <div style="text-align: center;vertical-align: center;padding-top:150px;">
+        <h1> Rozpocznij Grę!</h1>
 
-<form>
-    <a align="center" th:href="@{/add}">
-    <button align="center" type="button" class="btn btn-primary btn-lg">START</button>
-    </a>
-</form>
+        <form>
+            <a align="center" th:href="@{/add}">
+                <button align="center" type="button" class="btn btn-primary btn-lg">START</button>
+            </a>
+        </form>
 
 
-</div>
+    </div>
 </div>
 </body>
 </html>

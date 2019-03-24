@@ -43,9 +43,9 @@ public class MainController {
 
 
     @GetMapping("/")
-    public String Start(ModelMap modelMap){
+    public String Start(ModelMap modelMap) {
 
-        modelMap.put("start",user.getNumberOfPoints());
+        modelMap.put("start", user.getNumberOfPoints());
         user.setNumberOfPoints(0);
 
         return "home";
@@ -53,7 +53,7 @@ public class MainController {
 
 
     @GetMapping("/score")
-    public String showPoints(ModelMap modelMap){
+    public String showPoints(ModelMap modelMap) {
 
         User userData = userRepository.findByName(GameScore.username);
         userData.setNumberOfPoints(user.getNumberOfPoints());
@@ -71,10 +71,6 @@ public class MainController {
     Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
-
-
-
-
 
 
 }

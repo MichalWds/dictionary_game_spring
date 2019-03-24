@@ -3,23 +3,22 @@
 <head th:replace="/players :: head"></head>
 <div class="background-help2">
     <div style="background-color: rgba(0, 0, 255, 0.7);padding:20px;width:1000px; margin-left:100px;">
-    <meta charset="UTF-8">
-    <title>Podpowiedź</title>
-</head>
-<body>
-<label><h1>Tłumaczenie slowa to : </h1></label>
+        <meta charset="UTF-8">
+        <title>Podpowiedź</title>
+        </head>
+        <body>
+        <label><h1>Tłumaczenie slowa to : </h1></label>
 
 
-<form action="/r2">
+        <form action="/r2">
 
-    <h3 tłumaczenie słowa to</h3>
-    <p th:text="${help2}"></p>
+            <h3 tłumaczenie słowa to</h3>
+            <p th:text="${help2}"></p>
 
-    <input type="text" name="englishW">
-    <input type="submit" value="wpisz i wróć"class="btn btn-primary btn-lg">
+            <input type="text" name="englishW">
+            <input type="submit" value="wpisz i wróć" class="btn btn-primary btn-lg">
 
 
-
-</form>
-</body>
+        </form>
+        </body>
 </html>
