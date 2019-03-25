@@ -59,8 +59,6 @@ public class DictionaryController {
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
         modelMap.put("point", user.getNumberOfPoints());
-
-
         return "roundone";     //roundone
     }
 
@@ -79,7 +77,6 @@ public class DictionaryController {
         modelMap.put("help", dictionaryRoundOneService.getPolishW());
         return "help";
     }
-
 
     @GetMapping("/r2")
     public String homePage2(@RequestParam(required = false) String name2,
