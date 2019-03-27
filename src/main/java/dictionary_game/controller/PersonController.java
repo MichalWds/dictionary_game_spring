@@ -29,11 +29,15 @@ public class PersonController {
         return "redirect:/players";
     }
 
+
+
     @GetMapping("/players")
     public String findAll(ModelMap modelMap) {
         modelMap.put("user", userRepository.findAllSortById());
         return "players";
     }
+
+
 
     @GetMapping("/add")
     public String show(ModelMap modelMap) {
