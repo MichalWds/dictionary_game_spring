@@ -1,17 +1,17 @@
 package dictionary_game;
 
-import dictionary_game.controller.DictionaryController;
+        import dictionary_game.controller.DictionaryController;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+        import javax.persistence.Entity;
+        import javax.persistence.GeneratedValue;
+        import javax.persistence.GenerationType;
+        import javax.persistence.Id;
+        import javax.validation.constraints.Min;
+        import javax.validation.constraints.NotNull;
+        import javax.validation.constraints.Size;
+        import java.util.HashMap;
+        import java.util.Map;
+        import java.util.Random;
 
 @Entity
 public class Library {
