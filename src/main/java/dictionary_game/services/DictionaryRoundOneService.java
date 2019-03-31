@@ -58,8 +58,6 @@ public class DictionaryRoundOneService {
 
                 return "Dobrze! +1pkt! ";
             }
-
-
         }
         return "";
     }
