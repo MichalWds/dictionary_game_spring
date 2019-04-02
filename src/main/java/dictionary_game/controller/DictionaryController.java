@@ -128,7 +128,7 @@ public class DictionaryController {
                            ModelMap modelMap) {
 
 
-        modelMap.put("answer", dictionaryRoundThreeService.getMessage(name3)); //kolejnosc istotna!
+        modelMap.put("answer", dictionaryRoundThreeService.getMessage(name3));
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
 

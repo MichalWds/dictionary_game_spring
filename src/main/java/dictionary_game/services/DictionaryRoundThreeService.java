@@ -40,13 +40,11 @@ public class DictionaryRoundThreeService {
     }
 
     public String getFirstEnglishW() {
-
         return EWord = libraryRepository.findById(work() + 1).get().getEnglishWord();
 
     }
 
     public String getPolishW() {
-
         return PWord = libraryRepository.findById(index + 1).get().getPolishWord();
     }
 

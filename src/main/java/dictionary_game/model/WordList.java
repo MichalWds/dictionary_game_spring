@@ -190,7 +190,6 @@ public class WordList {
     }
 
 
-    //ta metoda nie jest konieczna ale czasem może uprościć
 
     public WordList(Map<String, String> dictionary) {
         this.dictionary = dictionary;
