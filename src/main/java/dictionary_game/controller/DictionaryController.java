@@ -59,7 +59,7 @@ public class DictionaryController {
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
         modelMap.put("point", user.getNumberOfPoints());
-        return "roundone";     //roundone
+        return "roundone";
     }
 
     @GetMapping("/roundone")
