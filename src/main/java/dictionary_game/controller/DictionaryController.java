@@ -66,7 +66,7 @@ public class DictionaryController {
     public String showEnglish(@RequestParam(required = false) String name,
                               ModelMap modelMap) {
 
-        modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints()); //kolejnosc istotna!
+        modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundOneService.getPolishW());
         return "redirect:/roundone";
