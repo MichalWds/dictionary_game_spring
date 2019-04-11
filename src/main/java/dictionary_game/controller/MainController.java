@@ -51,7 +51,6 @@ public class MainController {
         return "home";
     }
 
-
     @GetMapping("/score")
     public String showPoints(ModelMap modelMap) {
 
@@ -64,7 +63,6 @@ public class MainController {
 
         return "score";
     }
-
 
     @GetMapping(path = "/all")        //JSON
     public @ResponseBody

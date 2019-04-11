@@ -9,13 +9,13 @@
         <body>
         <h1>Podaj tłumaczenie słowa: </h1>
         <form accept="/roundtwo">  <!-- po wykonaniu akcji, wraca do result-->
-            <h2><p th:text="${polishW}"></p></h2>
+            <h2><b><p th:text="${polishW}"></b></p></h2>
             <label><h3>Przetłumacz</h3></label>
 
             <input type="text" name="name2">
             <input type="submit" value="Następne" class="btn btn-primary btn-lg">
             <form>
-                <div th:if="${point2 > 4 }">
+                <div th:if="${point2 > 3 }">
                     <a th:href="@{/r3}">
                         <button class="btn btn-primary btn-lg" type="button">Idź dalej</button>
                     </a></div>
