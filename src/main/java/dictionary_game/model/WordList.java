@@ -109,10 +109,8 @@ public class WordList {
         dictionary.put("zbiornik", "tank");
         dictionary.put("spód", "bottom");
         dictionary.put("klucz", "key");
-        dictionary.put("piła", "saw");
         dictionary.put("spawanie orbitalne", "orbital welding");
         dictionary.put("młotek", "hammer");
-        dictionary.put("kątownik", "try square");
         dictionary.put("profil", "square");
         dictionary.put("kask ochronny", "safety helmet");
         dictionary.put("spawanie podwodne", "underwater welding");
@@ -140,7 +138,6 @@ public class WordList {
         dictionary.put("cęgi boczne", "diagonal pliers");
         dictionary.put("nożyce", "scissors");
         dictionary.put("gwóźdź", "nail");
-        dictionary.put("młotek", "hammer");
         dictionary.put("przecinak", "chisel");
         dictionary.put("punktak", "punch");
         dictionary.put("wykrawarka", "punching machine");

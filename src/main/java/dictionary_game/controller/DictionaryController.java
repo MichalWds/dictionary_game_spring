@@ -112,13 +112,11 @@ public class DictionaryController {
     public String homePage3(@RequestParam(required = false) String name3,
                             ModelMap modelMap) {
 
-
         modelMap.put("answer3", dictionaryRoundThreeService.getMessage(name3) + communicat + user.getNumberOfPoints());
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
         modelMap.put("hashWord", dictionaryRoundThreeService.getHashEnglish());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
         modelMap.put("point3", user.getNumberOfPoints());
-
 
         return "roundthree";
     }

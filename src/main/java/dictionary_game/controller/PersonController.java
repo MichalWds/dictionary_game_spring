@@ -19,7 +19,6 @@ public class PersonController {
     @Autowired
     User user;
 
-
     @GetMapping("players/{id}/delete")
     public String delete(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
         User user = userRepository.findById(id).get();
