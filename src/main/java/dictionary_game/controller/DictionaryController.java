@@ -1,15 +1,11 @@
 package dictionary_game.controller;
 
-import dictionary_game.repositories.LibraryRepository;
-
 import dictionary_game.model.User;
 import dictionary_game.repositories.UserRepository;
 import dictionary_game.services.DictionaryRoundOneService;
 import dictionary_game.services.DictionaryRoundThreeService;
 import dictionary_game.services.DictionaryRoundTwoService;
-import dictionary_game.services.GameScore;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Random;
 
-
-@Scope(value = "session")
 @Controller
 public class DictionaryController {
-
-    private Random random = new Random();
 
     @Autowired
     private User user = new User();
@@ -43,17 +34,11 @@ public class DictionaryController {
     @Autowired
     DictionaryRoundThreeService dictionaryRoundThreeService;
 
-    @Autowired
-    private LibraryRepository libraryRepository;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
 
     @GetMapping("/r1")
     public String homePage(@RequestParam(required = false) String name, ModelMap modelMap) {
-
 
         modelMap.put("answer", dictionaryRoundOneService.getMessage(name) + communicat + user.getNumberOfPoints());
         modelMap.put("englishW", dictionaryRoundOneService.getFirstEnglishW());
@@ -87,9 +72,7 @@ public class DictionaryController {
         modelMap.put("englishW", dictionaryRoundTwoService.getEnglishW());
         modelMap.put("point2", user.getNumberOfPoints());
         return "roundtwo";
-
     }
-
 
     @GetMapping("/roundtwo")
     public String showPolish(@RequestParam(required = false) String name2, ModelMap modelMap) {
@@ -106,7 +89,6 @@ public class DictionaryController {
         modelMap.put("help2", dictionaryRoundTwoService.getEnglishW());
         return "help2";
     }
-
 
     @GetMapping("/r3")
     public String homePage3(@RequestParam(required = false) String name3,
@@ -125,14 +107,11 @@ public class DictionaryController {
     public String showHash(@RequestParam(required = false) String name3,
                            ModelMap modelMap) {
 
-
         modelMap.put("answer", dictionaryRoundThreeService.getMessage(name3));
         modelMap.put("englishW", dictionaryRoundThreeService.getFirstEnglishW());
         modelMap.put("polishW", dictionaryRoundThreeService.getPolishW());
 
-
         return "redirect:/roundthree";
     }
-
 
 }
