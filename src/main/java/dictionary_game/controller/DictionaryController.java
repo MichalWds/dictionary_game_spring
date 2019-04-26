@@ -34,7 +34,6 @@ public class DictionaryController {
     @Autowired
     DictionaryRoundThreeService dictionaryRoundThreeService;
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @GetMapping("/r1")

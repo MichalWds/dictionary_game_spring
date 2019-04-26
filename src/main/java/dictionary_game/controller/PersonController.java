@@ -1,6 +1,5 @@
 package dictionary_game.controller;
 
-
 import dictionary_game.model.User;
 import dictionary_game.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
