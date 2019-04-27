@@ -15,10 +15,18 @@ public class User {
 
     private Integer numberOfPoints;
 
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
+    public Integer getId() {
+        return id;
+
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     @NotNull(message= "nie moze byc puste")    //imie nie moze byc nullem, message jesli chcemy dac swoj komunikat
     @Size(min=2, max=30, message = "Minimum 3 znaki")
 

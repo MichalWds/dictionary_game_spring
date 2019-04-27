@@ -169,32 +169,9 @@ public class WordList {
         dictionary.put("rysik", "scriber");
         dictionary.put("poziomica", "level");
 
-
     }
 
     public Map<String, String> getDictionary() {
         return dictionary;
-    }
-
-    public void setDictionary(Map<String, String> dictionary) {
-
-        this.dictionary = dictionary;
-    }
-
-    public void addWordToDictionary(String key, String value) {
-
-        this.dictionary.put(key, value);
-    }
-
-
-
-    public WordList(Map<String, String> dictionary) {
-        this.dictionary = dictionary;
-    }
-
-    public String getWordFromDict(String key) {
-
-        return dictionary.get(key);
-
     }
 }
