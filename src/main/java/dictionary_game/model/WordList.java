@@ -7,7 +7,6 @@ public class WordList {
 
     private Map<String, String> dictionary = new HashMap<>();
 
-
     public WordList() {
         addStartDataBase();    //odwolanie do metody!  W KONSTRUKTORZE MUSI BYC STWORZONY OBIEKT, mowiacy nam do czergo sie odnosi (czystosc kodu)
     }

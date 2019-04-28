@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Controller
 public class DictionaryController {

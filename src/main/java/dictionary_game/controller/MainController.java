@@ -20,7 +20,6 @@ public class MainController {
     @Autowired
     User user;
 
-
     @PostMapping("/home")
     public String create(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

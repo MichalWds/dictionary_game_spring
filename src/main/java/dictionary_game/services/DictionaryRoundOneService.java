@@ -20,7 +20,6 @@ public class DictionaryRoundOneService {
     @Autowired
     private LibraryRepository libraryRepository;
 
-
     @Autowired
     private User user;
 
@@ -32,9 +31,7 @@ public class DictionaryRoundOneService {
     }
 
     public String getFirstEnglishW() {
-
         return EWord = libraryRepository.findById(work() + 1).get().getEnglishWord();
-
     }
 
     public String getPolishW() {
@@ -45,22 +42,17 @@ public class DictionaryRoundOneService {
     public String getMessage(String name) {
 
         while (name != null) {
-
             if (!name.equals(PWord) || name == "") {
-
                 user.substractPoints();
-
                 return "Źle! -1pkt! ";
             } else {
 
                 user.addPoint();
-
                 return "Dobrze! +1pkt! ";
             }
         }
         return "";
     }
-
 }
 
 
