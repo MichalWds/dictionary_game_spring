@@ -12,7 +12,6 @@ public class WordList {
     }
 
     private void addStartDataBase() {
-
         dictionary.put("spawanie", "welding");
         dictionary.put("spoina", "weld");
         dictionary.put("spawacz", "welder");
